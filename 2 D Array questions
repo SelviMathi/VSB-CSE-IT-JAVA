@@ -35,7 +35,7 @@ Input
 Output
 15
 
-*****************Transpose Of The Matrix*****************
+*****************Transpose/Symmetric Of The Matrix*****************
 Input
 1 2 3
 4 5 6
@@ -95,7 +95,103 @@ M2
 7 8
 
 Output
-
+6 8 
+10 12
 
 *****************Matrix Subtraction*********************
+Input
+8  6  
+5  9  
 
+3  2  
+1  4
+
+Output
+5 4
+4 5
+
+********Diagonal Matrix
+A diagonal matrix is a square matrix where all elements outside the main diagonal are zero.
+Input
+1  2  3  
+4  5  6  
+7  8  9  
+
+Output
+1  0  0  
+0  5  0  
+0  0  9  
+
+********Lower Triangular Matrix
+
+A lower triangular matrix is a square matrix where all elements above the main diagonal are zero.
+
+Input
+
+1  0  0  
+4  5  0  
+7  8  9  
+Output
+The given matrix is a lower triangular matrix.
+
+*******Upper Triangular Matrix
+An upper triangular matrix is a square matrix where all elements below the main diagonal are zero.
+
+Input
+1  2  3  
+4  5  6  
+7  8  9  
+Output
+1  2  3  
+0  5  6  
+0  0  9  
+
+******Tridiagonal matrix
+ Non-zero elements are on the main diagonal and its adjacent diagonals.
+INput
+1  2  0  0  
+3  4  5  0  
+0  6  7  8  
+0  0  9  10 
+Output
+The given matrix is a tridiagonal matrix.
+
+Input
+1  2  3  0  
+4  5  6  7  
+0  8  9  10  
+0  0  11  12  
+Output
+The given matrix is NOT a tridiagonal matrix.
+
+
+************Square band matrix
+A Square Band Matrix is a special type of square matrix where all nonzero elements are confined within a diagonal band that extends along the main diagonal. Elements outside this band are always zero.
+
+The width of the band is determined by a parameter called the bandwidth (k). The bandwidth defines how many diagonals above and below the main diagonal contain nonzero values.
+
+Input
+1  2  0  0  
+3  4  5  0  
+0  6  7  8  
+0  0  9  10  
+Output
+The given matrix is a square band matrix.
+
+Input
+1  2  3  0  
+4  5  6  7  
+0  8  9  10  
+0  0  11  12  
+Output
+The given matrix is NOT a square band matrix.
+
+Input
+1  2  3  0  0  
+4  5  6  7  0  
+8  9  10 11 12  
+0 13 14 15 16  
+0  0 17 18 19  
+Output
+The given matrix is a square band matrix.
+  
