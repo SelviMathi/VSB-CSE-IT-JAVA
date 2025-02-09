@@ -1,0 +1,25 @@
+******************Time complexity
+
+Time complexity measures the amount of time an algorithm takes as a function of the input size 
+n
+n. It is often expressed using Big-O notation.
+Constant Time: 
+O(1) (e.g., accessing an array element).
+Logarithmic Time: 
+O(logn) (e.g., binary search).
+Linear Time: 
+O(n) (e.g., traversing an array).
+Linearithmic Time: 
+O(nlogn) (e.g., merge sort).
+Quadratic Time: 
+O(n ^2) (e.g., bubble sort).
+Exponential Time: 
+O(2^n ) (e.g., solving the Tower of Hanoi).
+
+************************Best, Worst, and Average Case:
+
+Best Case: Minimum time required (e.g., linear search finds the element in the first step).
+
+Worst Case: Maximum time required (e.g., linear search finds the element in the last step).
+
+Average Case: Expected time over all possible inputs.
