@@ -1,4 +1,4 @@
-Recursion****************
+***********************Recursion****************
 
 Recursion is a programming technique where a function calls itself in order to solve a problem. It is particularly useful for problems that can be broken down into smaller, similar subproblems. A recursive function typically has two parts:
 
