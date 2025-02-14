@@ -62,9 +62,71 @@ public class DPBU {
               System.out.println("\nExecution Time: " + (endTime - startTime) / 1_000_000 + " ms");
         }
     }
+**********FIBONACCI SERIES USING iteration**************
     
-    
+  public class Main {
+    public static int fib(int n) {
+        if (n <= 1) return n;
+
+        int a = 0, b = 1, c;
+        for (int i = 2; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
+    }
+
+    public static void main(String[] args) {
+        long startTime = System.nanoTime();
+        int result = fib(30);
+        long endTime = System.nanoTime();
+        System.out.println("Result: " + result);
+        System.out.println("Execution Time: " + (endTime - startTime) / 1_000_000 + " ms");
+    }
+}
+  
 
 
-    
+    Performance Comparison
+Approach	                  Time Complexity	            Space Complexity	                        Best for Large n?
+Recursive (Brute Force)	      O(2ⁿ)                        	O(n) (Stack space)	                  ❌ No (Very Slow)
+Recursive (Memoization)      	O(n)	                        O(n)                                    	✅ Yes
+Iterative (Bottom-Up)	      O(n)                        	O(n)                                      ✅ Yes
+Iterative (Best Method)      	O(n)                        	O(1) (only 3 variables)	                  No recursion, no extra array
 
+
+Recursion is More Intuitive for Certain Problems
+Some problems have a natural recursive structure, making recursion easier to understand and implement than iteration. Examples include:
+
+✔ Tree Traversals (Binary Tree, Graphs)
+
+Recursive Inorder, Preorder, Postorder Traversals
+Recursive DFS (Depth-First Search) in Graphs
+✔ Divide & Conquer Algorithms
+
+Merge Sort (O(n log n))
+Quick Sort (O(n log n))
+Binary Search (O(log n))
+✔ Backtracking Problems
+
+Sudoku Solver
+N-Queens Problem
+Rat in a Maze
+✔ Dynamic Programming (When Subproblems Overlap)
+
+Fibonacci Sequence (Top-Down Memoization)
+Knapsack Problem
+Longest Common Subsequence (LCS)
+
+
+
+When to Use Recursion vs. Iteration?
+Scenario	                              Use Recursion?	                              Use Iteration?
+Fibonacci Sequence	                  ❌ No	✅                                        Yes (O(1) space)
+Factorial Calculation	                  ✅ Yes (Elegant)	                              ✅ Yes (Efficient)
+Tree Traversal (Binary Tree)            	✅ Yes (More intuitive)	                        ❌ No (Hard to manage stack)
+Graph Traversal (DFS, Backtracking)	      ✅ Yes (Recursive DFS)                        	✅ Yes (Iterative DFS with stack)
+Sorting (Merge Sort, Quick Sort)	      ✅ Yes (Divide & Conquer)	                  ❌ No (Difficult)
+Dynamic Programming (Memoization)	      ✅ Yes (Top-Down)                              	✅ Yes (Bottom-Up)
+Backtracking (Sudoku, N-Queens)	      ✅ Yes (Natural)	                              ❌ No (Very Hard Iteratively)
