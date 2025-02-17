@@ -179,7 +179,8 @@ public class Main {
     public static void main(String[] args) {
         int[] arr = {12, -7, 5, -3, 9, -6, 8, -2};
         segregateArray(arr);
-       
+       System.out.println("Segregated Array: " + Arrays.toString(arr));
+    
     }
 }
 
