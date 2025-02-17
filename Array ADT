@@ -1,8 +1,67 @@
-*******************************Array ADT - display , append, insert, delete*****************
+Feature                  	ArrayList 🟢	            Vector 🔵            	LinkedList 🟠
+Structure                	Uses dynamic array      	Uses dynamic array	  Uses doubly linked list
+Thread Safety	            ❌ Not synchronized      (not thread-safe)	✅ Synchronized (thread-safe)	❌ Not synchronized (not thread-safe)
+Performance	✅ Faster (no sync overhead)	⏳ Slower (due to synchronization)	⚡ Fast insert/delete but slow access
+Growth Rate	Expands 50% when full	Expands 2x when full	Grows dynamically
+Best Use Case	✅ When fast access (read) is needed	✅ When thread safety is required	✅ When frequent insertions/deletions are needed
+Access Speed	🔥 O(1) (fast random access)	🔥 O(1) (fast random access)	🐢 O(n) (slow, sequential search)
+Insert/Delete Speed	🐢 O(n) (slow due to shifting)	🐢 O(n) (same as ArrayList)	🚀 O(1) at head/tail, O(n) otherwise*******************************Array ADT - display , append, insert, delete*****************
 
-***********************Array ADT - delete, get, set, search*******************************
+
+***********************Array ADT - get, set, search*******************************
+
 
 ********************************Array ADT - shift / rotate******************************
+
+
+**********Methods of ArrayList, Vector, and LinkedList**********
+Below are some common methods available in all three classes:
+
+1. Common Methods (Available in All)
+Method                  	Description
+add(E e)              	Adds an element at the end.
+add(int index, E e)	    Inserts an element at a specific index.
+remove(int index)	      Removes an element at a specific index.
+remove(Object o)	      Removes the first occurrence of a specified element.
+get(int index)	        Retrieves an element at the specified index.
+size()                	Returns the number of elements.
+contains(Object o)	    Checks if an element exists.
+indexOf(Object o)	      Returns the first index of an element.
+clear()                	Removes all elements.
+
+2. Unique Methods
+Each class has some additional methods:
+
+✅ ArrayList & Vector (Methods not in LinkedList)
+ensureCapacity(int minCapacity) – Ensures minimum capacity.
+trimToSize() – Reduces size to match elements.
+
+✅ Vector-Specific Methods
+capacity() – Returns the current capacity.
+firstElement() – Returns the first element.
+lastElement() – Returns the last element.
+removeElement(Object obj) – Removes an element.
+
+✅ LinkedList-Specific Methods
+
+addFirst(E e), addLast(E e) – Adds elements at the beginning or end.
+removeFirst(), removeLast() – Removes first or last element.
+getFirst(), getLast() – Retrieves first or last element.
+poll(), peek() – Retrieves/removes elements from the head.
+
+************Programs*************
+Array Operation	        Manual Implementation	            Built-in Method
+Append	                arr[size++] = value;	          ArrayList.add(value);
+Insert	                Shift elements, then insert	    ArrayList.add(index, value);
+Delete	                Shift elements left	            ArrayList.remove(index);
+Get	                    arr[index]	                    ArrayList.get(index);
+Update                    arr[index] = value;	            ArrayList.set(index, value);
+Search	                Loop through array	            ArrayList.indexOf(value);
+Shift Left	            Loop and shift	                System.arraycopy()
+Shift Right            	Loop and shift	                Collections.rotate(arr, -1);
+Rotate Left	            Loop and swap	                  Collections.rotate(arr, -1);
+Rotate Right	          Loop and swap                  	Collections.rotate(arr, 1);
+
 Inserting in a sorted Array and checking if an Array is sorted
 
 Segregating positive and negative numbers
