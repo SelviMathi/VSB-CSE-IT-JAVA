@@ -141,9 +141,74 @@ Shift Right            	Loop and shift	                Collections.rotate(arr, -
 Rotate Left	            Loop and swap	                  Collections.rotate(arr, -1);
 Rotate Right	          Loop and swap                  	Collections.rotate(arr, 1);
 
-Inserting in a sorted Array and checking if an Array is sorted
 
-Segregating positive and negative numbers
+1.Segregating positive and negative numbers
+
+Using Arraylist
+import java.util.*;
+
+public class Main {
+    public static void segregateArray(int[] arr) {
+        List<Integer> positive = new ArrayList<>();
+        List<Integer> negative = new ArrayList<>();
+
+        for (int num : arr) {
+            if (num >= 0)
+                positive.add(num);
+            else
+                negative.add(num);
+        }
+
+        // Merge both lists back to array
+        int i = 0;
+        for (int num : negative) arr[i++] = num;
+        for (int num : positive) arr[i++] = num;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, -7, 5, -3, 9, -6, 8, -2};
+        segregateArray(arr);
+       
+    }
+}
+
+
+Using pointers
+import java.util.Arrays;
+
+public class SegregateNumbers {
+    public static void segregate(int[] arr) {
+        int left = 0, right = arr.length - 1;
+
+        while (left < right) {
+            // Move left if it is negative
+            if (arr[left] < 0) {
+                left++;
+            }
+            // Move right if it is positive
+            else if (arr[right] > 0) {
+                right--;
+            }
+            // Swap when left is positive and right is negative
+            else {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, -1, 20, 4, -6, -9, 8, -3};
+        System.out.println("Before segregation: " + Arrays.toString(arr));
+        segregate(arr);
+        System.out.println("After segregation: " + Arrays.toString(arr));
+    }
+}
+
+2.Inserting in a sorted Array and checking if an Array is sorted
 
 Merging two sorted arrays
 
