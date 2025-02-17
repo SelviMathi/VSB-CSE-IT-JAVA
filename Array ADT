@@ -1,17 +1,96 @@
-Feature                  	ArrayList 🟢	            Vector 🔵            	LinkedList 🟠
-Structure                	Uses dynamic array      	Uses dynamic array	  Uses doubly linked list
-Thread Safety	            ❌ Not synchronized      (not thread-safe)	✅ Synchronized (thread-safe)	❌ Not synchronized (not thread-safe)
-Performance	✅ Faster (no sync overhead)	⏳ Slower (due to synchronization)	⚡ Fast insert/delete but slow access
-Growth Rate	Expands 50% when full	Expands 2x when full	Grows dynamically
-Best Use Case	✅ When fast access (read) is needed	✅ When thread safety is required	✅ When frequent insertions/deletions are needed
-Access Speed	🔥 O(1) (fast random access)	🔥 O(1) (fast random access)	🐢 O(n) (slow, sequential search)
-Insert/Delete Speed	🐢 O(n) (slow due to shifting)	🐢 O(n) (same as ArrayList)	🚀 O(1) at head/tail, O(n) otherwise*******************************Array ADT - display , append, insert, delete*****************
+Collections
+List
+    ArrayList
+    Vector
+    LinkedList
 
 
+Feature                  	ArrayList 🟢	            Vector 🔵                        	LinkedList 🟠
+Structure                	Uses dynamic array      	Uses dynamic array	              Uses doubly linked list
+Thread Safety	            ❌ Not synchronized      ✅ Synchronized                 	❌ Not synchronized (not thread-safe)
+Performance	              ✅ Faster               	⏳ Slower            	            ⚡ Fast insert/delete but slow access
+Growth Rate	              Expands 50% when full	    Expands 2x when full	            Grows dynamically
+Best Use Case	            ✅ When fast access     	✅ When thread safety is required	  ✅ When frequent insertions/deletions are needed
+Access Speed	             O(1) (random access)	     O(1) (random access)	            🐢 O(n) (slow, sequential search)
+Insert/Delete Speed	       O(n) (slow )	             O(n) (same as ArrayList)	         O(1) at head/tail, O(n) otherwise*******************************Array ADT - display , append, insert, delete*****************
+
+
+***********************Array ADT - display, append, insert,delete*******************************
+import java.util.ArrayList;
+
+public class ArrList {
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        // Append elements
+        arr.add(10);
+        arr.add(20);
+        arr.add(30);
+        arr.add(40);
+        System.out.println("Array: " + arr); // Output: [10, 20, 30, 40]
+
+        // Insert element at index 2
+        arr.add(2, 25);
+        System.out.println("After insertion: " + arr); // Output: [10, 20, 25, 30, 40]
+
+        // Delete element at index 3
+        arr.remove(3);
+        System.out.println("After deletion: " + arr); // Output: [10, 20, 25, 40]
+
+    }
+}
 ***********************Array ADT - get, set, search*******************************
+import java.util.ArrayList;
+import java.util.Collections;
 
+public class ArrList1 {
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>();
 
-********************************Array ADT - shift / rotate******************************
+        // Append elements
+        arr.add(10);
+        arr.add(20);
+        arr.add(30);
+        arr.add(40);
+        System.out.println("Array: " + arr); // Output: [10, 20, 30, 40]
+
+        // // Get element at index 2
+        // System.out.println("Element at index 2: " + arr.get(2)); // Output: 25
+
+        // // Set (update) element at index 2
+        // arr.set(2, 35);
+        // System.out.println("After updating index 2: " + arr); // Output: [10, 20, 35, 40]
+
+        // // Search for an element
+        // int index = arr.indexOf(40);
+        // System.out.println("Index of 40: " + index); // Output: 3
+   }}
+*******************************Array ADT - shift / rotate******************************
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ArrList1 {
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        // Append elements
+        arr.add(10);
+        arr.add(20);
+        arr.add(30);
+        arr.add(40);
+        System.out.println("Array: " + arr); // Output: [10, 20, 30, 40]
+        
+        // Left Rotate
+        Collections.rotate(arr, -2);
+        System.out.println("After left rotation: " + arr); // Output: [20, 35, 40, 10]
+
+        // Right Rotate
+        Collections.rotate(arr, 1);
+        System.out.println("After right rotation: " + arr); // Output: [10, 20, 35, 40]
+
+        
+    }}
+
 
 
 **********Methods of ArrayList, Vector, and LinkedList**********
