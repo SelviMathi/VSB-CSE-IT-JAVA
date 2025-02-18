@@ -223,14 +223,14 @@ public class SegregateNumbers {
 
 2.Inserting in a sorted Array and checking if an Array is sorted
 
-Merging two sorted arrays
+3.Merging two sorted arrays
+
+4.Finding duplicate elements in a Integer array
+
+5.Finding missing elements in Arrays - Different Methods
 
 Set Operations - Union, Intersection
 
 Set Operations - Difference, Set Membership
-
-Finding missing elements in Arrays - Different Methods
-
-Finding duplicate elements in a Integer array
 
 Check for Anagrams in a String and Permutations of a String
