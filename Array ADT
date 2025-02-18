@@ -3,6 +3,7 @@ List
     ArrayList
     Vector
     LinkedList
+    Stack
 
 
 Feature                  	ArrayList 🟢	            Vector 🔵                        	LinkedList 🟠
