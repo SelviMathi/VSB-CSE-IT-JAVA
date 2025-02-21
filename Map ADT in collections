@@ -1,0 +1,94 @@
+Map
+HashMap
+LinkedHashMap
+TreeMap
+
+*************HashMap (Unordered, Fast)*************8
+import java.util.*;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(3, "Orange");
+        map.put(1, "Apple");
+        map.put(2, "Grapes");
+
+        System.out.println(map); 
+
+//Using for each
+for (Integer key : map.keySet()) {
+    System.out.println("Key: " + key + ", Value: " + map.get(key));
+
+//Using Iterator
+for (Map.Entry<String, Integer> en :map.entrySet()) {
+    String key = en.getKey();
+    int val = en.getValue();
+    System.out.println(key+val);
+    
+}   
+
+
+}
+}
+
+
+*************Getting input from user
+
+import java.util.*;
+
+public class HashMapInputExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        HashMap<Integer, String> map = new HashMap<>();
+
+        System.out.print("Enter number of entries: ");
+        int n = scanner.nextInt(); // Number of entries
+        scanner.nextLine(); // Consume newline
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter key (integer): ");
+            int key = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            System.out.print("Enter value (string): ");
+            String value = scanner.nextLine();
+
+            map.put(key, value); // Insert into HashMap
+        }
+
+        scanner.close();
+
+        // Printing the HashMap
+        System.out.println("HashMap contents: " + map);
+    }
+}
+
+
+***************LinkedHashMap (Insertion Order)***********
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args) {
+        LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+        map.put(3, "C++");
+        map.put(1, "Java");
+        map.put(2, "Python");
+
+        System.out.println(map); // Output: {3=C++, 1=Java, 2=Python} (Insertion Order)
+    }
+}
+
+******************TreeMap*********
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> map = new TreeMap<>();
+        map.put(3, "C++");
+        map.put(1, "Java");
+        map.put(2, "Python");
+
+        System.out.println(map); // Output: {1=Java, 2=Python, 3=C++} (Sorted by key)
+    }
+}
+
