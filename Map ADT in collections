@@ -6,7 +6,7 @@ TreeMap
 *************HashMap (Unordered, Fast)*************8
 import java.util.*;
 
-public class HashMapExample {
+public class Main {
     public static void main(String[] args) {
         HashMap<Integer, String> map = new HashMap<>();
         map.put(3, "Orange");
@@ -15,12 +15,29 @@ public class HashMapExample {
 
         System.out.println(map); 
 
-//Using for each
+//Using for each for keys & values
 for (Integer key : map.keySet()) {
-    System.out.println("Key: " + key + ", Value: " + map.get(key));
+    System.out.println("Key: " + key  ", Value: " + map.get(key));
+
+//Using for each for keys
+for (Integer key : map.keySet()) {
+    System.out.println("Key: " + key);
+
+//Using for each for values
+for (String val : map.values()) {
+    System.out.println(val);
 
 //Using Iterator
-for (Map.Entry<String, Integer> en :map.entrySet()) {
+Iterator<Map.Entry< Integer,String>> it = map.entrySet().iterator();
+while (it.hasNext()) {
+    Map.Entry<String, Integer> en = it.next();
+    String key = en.getKey();
+    int val = en.getValue();
+    System.out.println(key + " " + val);
+}
+
+//Using Iterator in foreach
+for (Map.Entry< Integer,String> en :map.entrySet()) {
     String key = en.getKey();
     int val = en.getValue();
     System.out.println(key+val);
@@ -36,22 +53,20 @@ for (Map.Entry<String, Integer> en :map.entrySet()) {
 
 import java.util.*;
 
-public class HashMapInputExample {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HashMap<Integer, String> map = new HashMap<>();
 
-        System.out.print("Enter number of entries: ");
         int n = scanner.nextInt(); // Number of entries
         scanner.nextLine(); // Consume newline
 
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter key (integer): ");
+//map.put(scanner.nextInt(),scanner.nextLine());
+
             int key = scanner.nextInt();
             scanner.nextLine(); // Consume newline
-
-            System.out.print("Enter value (string): ");
-            String value = scanner.nextLine();
+             String value = scanner.nextLine();
 
             map.put(key, value); // Insert into HashMap
         }
@@ -107,3 +122,7 @@ Load Factor                	Resizing Frequency	             Performance
 Low (e.g., 0.5)	            More frequent	                 More memory usage, fewer collisions
 Default (0.75)	            Balanced	                     Best performance for most cases
 High (e.g., 0.9)	        Less frequent                    More collisions, slower performance
+
+
+Count of element Occurence in given elements
+
