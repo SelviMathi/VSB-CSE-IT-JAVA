@@ -1,0 +1,114 @@
+Set
+HashSet
+LinkedHashSet
+TreeSet
+
+*************HashSet(Unordered)*******
+import java.util.HashSet;
+import java.util.Scanner;
+public class set {
+    public static void main(String[] args) {
+    Scanner ob=new Scanner(System.in);
+    int size=ob.nextInt();
+//Passing Array input to Hashset
+HashSet<Integer> arr = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+           
+ HashSet<Integer> hs1=new HashSet<>();
+    
+    for(int i=0;i<size;i++)
+    hs1.add(ob.nextInt());
+    //Display entire set
+  
+    System.out.println(hs1);
+
+    //Display Set by foreach
+
+    for(int val1:hs1)
+            System.out.println(val1);
+    //Display set by Iterator
+      Iterator<Integer> it=hs1.iterator();
+        while(it.hasNext())
+        {     
+            System.out.print(it.next()+" ");
+        }
+   
+
+}
+}
+********************LinkedHashSet(Insertion Ordered)**********
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedHashSet<String> set = new LinkedHashSet<>();
+        set.add("Banana");
+        set.add("Apple");
+        set.add("Orange");
+        set.add("Grapes");
+
+        System.out.println(set); 
+}
+}
+
+**********************TREESET(Sorted) *************
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        TreeSet<String> set = new TreeSet<>();
+        set.add("Banana");
+        set.add("Apple");
+        set.add("Orange");
+        set.add("Grapes");
+
+        System.out.println(set); 
+}
+}
+
+*********SET OPERATIONS************Union intersection Differnce Membership***********
+
+import java.util.HashSet;
+import java.util.Scanner;
+public class setcol {
+    public static void main(String[] args) {
+    Scanner ob=new Scanner(System.in);
+    int size=ob.nextInt();
+    HashSet<Integer> hs1=new HashSet<>();
+    
+    for(int i=0;i<size;i++)
+    hs1.add(ob.nextInt());
+    
+    System.out.println(hs1);
+
+    int size1=ob.nextInt();
+    HashSet<Integer> hs2=new HashSet<>();
+    
+    for(int i=0;i<size1;i++)
+    hs2.add(ob.nextInt());
+    
+    System.out.println(hs2);
+
+  //hs2.addAll(hs1);
+   //System.out.println("Union of Sets"+hs2);
+
+    //hs1.retainAll(hs2);
+     //System.out.println(hs1);
+
+    //hs1.removeAll(hs2);
+     //System.out.println(hs1);
+
+System.out.println(set.contains(20));
+           
+}
+    
+}
+
+
+
+Feature	           HashSet	                  TreeSet	                                        LinkedHashSet
+Ordering	      No ordering (Unordered)	      Sorted (Natural Order / Custom Comparator)	    Insertion Order
+Implementation	Uses HashMap internally      	Uses TreeMap (Red-Black Tree)	                  Uses LinkedHashMap
+Performance      	O(1)                         	O(log n)                                     	O(1) (Maintains order)
+Duplicates	    No duplicates allowed	        No duplicates allowed                          	No duplicates allowed
+Null Values	    Allows one null value	        Does not allow null values	                    Allows one null value
+Memory Usage  	Less memory overhead        	Higher memory usage due to sorting	            More memory than HashSet (due to Linked List)
