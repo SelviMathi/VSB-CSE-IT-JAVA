@@ -92,3 +92,18 @@ public class Main {
     }
 }
 
+*******Load Factor in HashMap 
+What is Load Factor?
+The load factor in a HashMap determines when to increase the size of the hash table.
+It is the ratio of the number of elements (entries) to the total number of buckets (capacity).
+Default load factor in Java's HashMap = 0.75 (75% full).
+Formula:
+
+Load Factor    =  Number of Entries
+                    --------------
+                        Capacity
+
+Load Factor                	Resizing Frequency	             Performance
+Low (e.g., 0.5)	            More frequent	                 More memory usage, fewer collisions
+Default (0.75)	            Balanced	                     Best performance for most cases
+High (e.g., 0.9)	        Less frequent                    More collisions, slower performance
