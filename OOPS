@@ -33,7 +33,7 @@ public class Main
 	    exam ob1=new exam();
 	}
 }
-******constructor with parametrised***********
+******constructor with parametrized ***********
 class exam
 {
     exam()
@@ -55,4 +55,59 @@ public class Main
 		
 	}
 }
-Encapsulation: The idea that some components of an object should be restricted from direct access 
+
+
+******Encapsulation: The idea that some components of an object should be restricted from direct access******* 
+
+Example:
+
+class exam
+{
+   private int x;
+   public void set(int num)
+   {
+      x=num;
+   }
+   public void get()
+   {
+       System.out.println(x);
+   }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=10;
+	    	   exam ob1=new exam();
+	    	   ob1.set(a);
+	    	   ob1.get();
+	    
+		
+	}
+}
+*********this Keyword**********
+class exam
+{
+   private int x;
+   public void set(int x)
+   {
+     this.x=x;
+   }
+   public void get()
+   {
+       System.out.println(x);
+   }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=10;
+	    	   exam ob1=new exam();
+	    	   ob1.set(a);
+	    	   ob1.get();
+	    
+		
+	}
+}
+
