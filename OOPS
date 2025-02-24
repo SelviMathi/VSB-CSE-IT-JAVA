@@ -1,0 +1,58 @@
+What is OOPS?
+
+Object-oriented programming (OOP) is a programming model that uses classes and objects to create software programs.
+
+
+Why is OOPS?
+
+ Modular Code: Divides code into objects and classes.
+ Reusability: Inheritance allows code reuse.
+ Scalability: New features can be added easily.
+ Security: Encapsulation restricts direct access to data.
+
+Classes: A blueprint or template that defines the structure and behavior of objects 
+
+Objects: An instance of a class, representing a specific entity with its own set of attributes and behaviors
+
+
+Constructor:
+
+Example:
+class exam
+{
+    exam()
+    {
+        System.out.println("HI");
+    }
+    
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    exam ob1=new exam();
+	}
+}
+******constructor with parametrised***********
+class exam
+{
+    exam()
+    {
+        System.out.println("HI");
+    }
+    exam(int x)
+    {
+        System.out.println(x);
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    exam ob=new exam(100);
+	   exam ob1=new exam();
+	    
+		
+	}
+}
+Encapsulation: The idea that some components of an object should be restricted from direct access 
