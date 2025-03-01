@@ -21,7 +21,57 @@ length - double
 height - double
 Include parameterized constructor Wall(double length, double height) and a method calculateArea() which returns the area of the wall. In the main method get the length and breadth of two walls from the user.
 
-4.Create a Java class called Vehicle with the following specifications:
+4.SINGLE INHERITANCE
+Create a class 'Parent'. 'Parent' class should have a method 'add' which prints the addition of 2 integers. Create a class 'Child' which should be a child class of 'Parent' class. 'Child' class should have a method 'sub' which prints subtraction of 2 integers. Create an object for a 'Child' class. Call the 2 methods add and sub from the child class object and display the result.
+Example Input
+60
+34
+Output
+94
+26
+
+5.An ice-cream vendor sells his ice-creams in cone(radius r and height h) and ball(radius r) shaped containers. However, he is unsure of the quantity that can be filled in the two containers. You are required to write a program in java that prints the volume of the containers given its respective dimensions as input. Your class must be named ‘Icecream’ which has two methods with same name ‘Quantity’ each having the respective dimensions of the containers as the parameters. 
+Function Header:
+public void Quantity(int r, int h)
+public void Quantity(int r)
+Input Format 
+If the quantity of the cone is to be calculated, the input must have the radius(r) and height(h) in the same line separated by a space.
+For calculating the quantity of the ball, the input must have its radius(r).
+Note: Input type should be integer.
+Output Format 
+The output must display the volume of the container rounded off to two decimal places for which the dimensions are given.
+
+Sample Input 
+4 5
+4
+Sample Output
+82.90
+267.28
+
+6.Create a parent class that consists of two methods m1 and m2. 
+m1 doesn't take any arguments and it just prints from parent.
+m2 takes an integer value as parameter and prints the same.
+Create a child class that extends parent class and override its methods.
+m1 doesn't take any arguments and it just prints from child.
+m2 takes an integer value as parameter and prints the same.
+In the main class, create objects for the above classes and call the corresponding methods.
+Input Format 
+The input consists of the integer value for both the classes separated by a space.
+Output Format 
+The output displays the result. Refer sample output.
+Constraints 
+integers only.
+
+Sample Input  1 2
+Sample Output 
+From parent m1()
+1
+From child m1()
+2
+
+
+
+7.Create a Java class called Vehicle with the following specifications:
 The Vehicle class should have a protected string variable named type.
 Implement a constructor to initialize the type variable.
 Implement a public method named displayType() that prints the value of the type.
@@ -44,32 +94,136 @@ Type: Sedan
 Brand: BMW
 
 
-5.An ice-cream vendor sells his ice-creams in cone(radius r and height h) and ball(radius r) shaped containers. However, he is unsure of the quantity that can be filled in the two containers. You are required to write a program in java that prints the volume of the containers given its respective dimensions as input. Your class must be named ‘Icecream’ which has two methods with same name ‘Quantity’ each having the respective dimensions of the containers as the parameters. 
 
-Function Header:
+8.Write a java program that creates an abstract class called "Shape". This class should have the following methods:
+abstract void rectangleArea();
+abstract void squareArea();
+abstract void circleArea();
+Then, create a class called "Area" that extends the "Shape" class. This class should calculate and print the area of all shapes.
+Finally, create a Main class that gets the inputs and passes them to the appropriate methods.
 
-public void Quantity(int r, int h)
+Input Format 
+The first line of the input consists of the length and breadth.
+The second line consists of the side.
+The third line consists of the radius.
+Output Format 
+The output prints the area of a rectangle, square, and circle.
 
-public void Quantity(int r)
-
- Input Format 
-If the quantity of the cone is to be calculated, the input must have the radius(r) and height(h) in the same line separated by a space.
-
-For calculating the quantity of the ball, the input must have its radius(r).
-
-
-
-Note: Input type should be integer.
-
- Output Format 
-The output must display the volume of the container rounded off to two decimal places for which the dimensions are given.
-
-Sample Input 
-4 5
+Sample Input  
+10 20
 4
-82.90
-267.28
+5
+Sample Output 
+200
+16
+78.54
+
+9.Problem Statement:
+Write a program to implement the following logic using inheritance.
+Create a parent class and implement the fun method. In the method, get the individual digits of the entered number, store it in an array, and find their sum.
+For example in case of 1234, the individual digits are 4,3,2,1 and the final sum → (4+3)+(4+2)+(4+1)+(3+2)+(3+1)+(2+1) = 30. Create the main class that inherits the parent class and call the fun method inside the parent function.
+
+Input Format
+The input consists of an integer.
+Output Format
+The output prints the final sum.
+Constraints
+Integers only.
+Sample Input
+1234
+Sample Output
+30
+
+10.Create two functions with the same name "add"
+int add(int, int) - that takes two integer inputs as parameters and adds them. float add(float, float) - that takes two float values as parameters and adds them. In the main method, get the inputs and pass them to the functions.
+Input Format
+First line contains two integers separated by a space. Second line contains two floating points values separated by a space
+Output Format
+The output displays the two output values in different lines as shown in the sample test case.
+Sample Input	
+1 2
+3.5 4.5
+Sample Output
+3
+8.0
+
+11.Write a program defining 3 functions with the same name "calc" which performs the mathematical operations of Square, Modulus, and Division.
+
+●	Function for Square takes in one integer argument and returns an integer value
+●	Function for Modulus takes 2 integer arguments and returns an integer value
+●	Function for Division takes 2 floating-point arguments and returns and float value
 
 
+Input Format
 
-.
+Single line input has 2 integer values and 2 floating-point values separated by a space.
+Note: First input for Square function: First two inputs for modulus function and last two inputs for division function
+Output Format
+
+The output displays the result of the operations in separate lines as shown in the sample test cases.
+Sample Input	
+-8 -6 -5 2.0365
+Sample Output
+Square of -8: 64
+Modulus of -8, -6: -2
+Quotient of -5, 2.0365: -2.46
+
+12.Function Overloading
+Write a program to implement function overloading.
+Ram is given two or three inputs as an integer, if he has two integers then add the two numbers. If he has three inputs, then multiply the three numbers.
+Function Header:
+public void fun1(int a,int b,int c) public void fun1(int a,int b)
+
+
+Input Format
+First-line represents the number of elements(N) followed by the elements separated by a single space. If the number of the elements exceeds 2 or 3, then display a message as Invalid Input.
+Output Format
+
+Display the sum, if there are two integers or Displays product, if there are three integers.
+Constraints
+
+N > 0 and N < 4
+Sample Input	
+3 1 2 3
+Sample Output
+6
+
+13.Write a program to find that whether the given number(x) is even or odd if it is even then print the cube(x)+square(x) else print cube(x)-square(x).
+Create a base class with a virtual function void print(). print the result by implementing this virtual function in the derived class.
+
+Input Format
+The input consists of an Integer.
+Output Format
+The output prints the result.
+Sample Input
+5
+Sample Output
+100
+
+14.Alphabetics Game:
+You have to enter four letters for each uppercase letter you will get 10 marks and for each lowercase letter, you will get -5 marks. Write a program to calculate the total score.
+Create a base class with a virtual method void game(). Define this method in the Derived class and calculate the total score.
+
+
+Input Format
+Input consists of four characters separated by space.
+Output Format
+The output prints the total score.
+Sample Input	
+A B Z X
+Sample Output
+40
+
+15.Problem Statement:
+Create a base class named operationsBase with the following four virtual functions void addition()
+void subtraction() void multiplication() void division()
+Create a derived class named operationsDerived that extends operationsBase with a and b as its private attributes and override the virtual functions.
+
+Input Format
+The input consists of two integers.
+Output Format
+The output prints the results of addition, subtraction, multiplication, and division separated by a space.
+Sample Input	
+20 10 
+Sample Output
+30 10 200 2
