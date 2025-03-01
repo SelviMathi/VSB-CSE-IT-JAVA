@@ -1,0 +1,64 @@
+1.Write a Java program to Create a class named Player with the following member variables/attributes 
+
+Datatype  Variablename 
+String		Name
+String		Country	
+String		Skill
+
+Create another class named Main and write a main method to test the above class. 
+
+2.Write a Java program that prints a welcome message and a hello message using two different classes Message and Hello, each with a default constructor that outputs a specific message.
+ Input Format 
+  No console Input
+ Output Format 
+  The Output Should display the Welcome Message
+ Sample Input 
+ Sample Output 
+  Welcome Hello
+
+3.Write a program to find the area of the wall. Create a class Wall with the following private attributes
+
+length - double
+
+height - double
+
+Include parameterized constructor Wall(double length, double height) and a method calculateArea() which returns the area of the wall. In the main method get the length and breadth of two walls from the user.
+
+4.Create a Java class called Vehicle with the following specifications:
+
+
+
+The Vehicle class should have a protected string variable named type.
+
+Implement a constructor to initialize the type variable.
+
+
+
+Implement a public method named displayType() that prints the value of the type.
+
+Create a subclass of Vehicle called Car with the following specifications:
+
+
+
+The Car class should have a private string variable named brand.
+Implement a constructor to initialize both the type and brand variables.
+Implement a public method named displayBrand() that prints the value of brand.
+In the Main class, prompt the user to enter the type and brand of a car. Create an object of the Car class with the provided input and display the type and brand of the car using the displayType() and displayBrand() methods
+Input Format 
+The first line of the input should be car type
+
+The second line of the input should be the car brand
+
+ Output Format 
+Refer to the sample output
+
+ Sample Input  Sample Output 
+Sedan
+BMW
+Type: Sedan
+Brand: BMW
+
+
+5.
+
+3.
