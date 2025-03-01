@@ -17,28 +17,15 @@ Create another class named Main and write a main method to test the above class.
   Welcome Hello
 
 3.Write a program to find the area of the wall. Create a class Wall with the following private attributes
-
 length - double
-
 height - double
-
 Include parameterized constructor Wall(double length, double height) and a method calculateArea() which returns the area of the wall. In the main method get the length and breadth of two walls from the user.
 
 4.Create a Java class called Vehicle with the following specifications:
-
-
-
 The Vehicle class should have a protected string variable named type.
-
 Implement a constructor to initialize the type variable.
-
-
-
 Implement a public method named displayType() that prints the value of the type.
-
 Create a subclass of Vehicle called Car with the following specifications:
-
-
 
 The Car class should have a private string variable named brand.
 Implement a constructor to initialize both the type and brand variables.
@@ -46,19 +33,43 @@ Implement a public method named displayBrand() that prints the value of brand.
 In the Main class, prompt the user to enter the type and brand of a car. Create an object of the Car class with the provided input and display the type and brand of the car using the displayType() and displayBrand() methods
 Input Format 
 The first line of the input should be car type
-
 The second line of the input should be the car brand
-
  Output Format 
 Refer to the sample output
-
- Sample Input  Sample Output 
+Sample Input   
 Sedan
 BMW
+Sample Output
 Type: Sedan
 Brand: BMW
 
 
-5.
+5.An ice-cream vendor sells his ice-creams in cone(radius r and height h) and ball(radius r) shaped containers. However, he is unsure of the quantity that can be filled in the two containers. You are required to write a program in java that prints the volume of the containers given its respective dimensions as input. Your class must be named ‘Icecream’ which has two methods with same name ‘Quantity’ each having the respective dimensions of the containers as the parameters. 
 
-3.
+Function Header:
+
+public void Quantity(int r, int h)
+
+public void Quantity(int r)
+
+ Input Format 
+If the quantity of the cone is to be calculated, the input must have the radius(r) and height(h) in the same line separated by a space.
+
+For calculating the quantity of the ball, the input must have its radius(r).
+
+
+
+Note: Input type should be integer.
+
+ Output Format 
+The output must display the volume of the container rounded off to two decimal places for which the dimensions are given.
+
+Sample Input 
+4 5
+4
+82.90
+267.28
+
+
+
+.
