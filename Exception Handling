@@ -59,3 +59,36 @@ it is method
 
 
 
+
+PROBLEM TO PRACTISE:
+
+1.Check whether the person is eligible for a driving license or not. If the age is less than 18, throw an exception and print "Invalid Age" and quit. If the score is less than 40, throw an exception and print "You should get at least 40 marks" and quit. Else print "Passed".
+
+
+Input Format
+
+The input consists of the age and score separated by a space.
+Output Format
+
+The output prints the age, score, and result.
+
+Refer to the sample outputs for the formatting specifications.
+Sample Input	Sample Output
+12 50		12 50 
+		Invalid Age
+Sample Input	Sample Output
+50 50		50 50 
+		Passed
+ 
+
+2.Get an integer input,
+If the input is 1, Throw an Integer exception.
+If the input is 2, Throw a Character exception. If the input is 3, Throw a double exception
+Input Format
+
+The input consists of an integer.
+Output Format
+
+The output prints the corresponding exception. Refer sample output for formatting exception.
+Sample Input	Sample Output
+1		Integer exception caught
