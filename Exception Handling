@@ -1,0 +1,61 @@
+Exception:
+An exception in Java (or any programming language) is an error. It is an unexpected break in the program's flow that can cause the program to crash.
+
+Exception handling:
+Java provides a structured way to handle exceptions using:
+
+try block – Contains code that may throw an exception.
+catch block – Handles the exception if one occurs.
+finally block – Executes regardless of whether an exception occurs or not.
+throw keyword – Used to explicitly throw an exception.
+throws keyword – Declares exceptions that a method can throw.
+
+
+Types of Exception
+
+Checked Exception
+The exception that can be predicted by the programmer at the compile time.
+Example : File that need to be opened is not found.
+
+Unchecked Exception
+Unchecked exceptions are the class that extends RuntimeException. 
+Example: ArithmeticException, NullPointerException, Array Index out of Bound exception.
+
+Error
+Errors are typically ignored in code because you can rarely do anything about an error.
+Example : if stack overflow occurs,that error cannot be handled in the code.
+
+
+Common scenarios where exceptions may occur
+
+
+1) Scenario where ArithmeticException occurs
+	int a=50/0;
+2) Scenario where NullPointerException occurs
+	String s=null;  
+	System.out.println(s.length());
+ 3) Scenario where NumberFormatException occurs
+	String s="abc";  
+	int i=Integer.parseInt(s);
+4) Scenario where ArrayIndexOutOfBoundsException occurs
+	int a[]=new int[5];  
+	a[10]=50;
+
+Java throw keyword is used to explicitly throw an exception.		      Java throws keyword is used to declare an exception.
+Checked exception cannot be propagated using throw only.		          Checked exception can be propagated with throws.
+Throw is used within the method.				                             	Throws is used with the method signature.
+You cannot throw multiple exceptions			                        		You can declare multiple exceptions e.g.
+									                                                    public void method()throws IOException,SQLException.
+
+
+Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.
+It is keyword
+
+Finally is used to place important code, it will be executed whether exception is handled or not.
+It is block
+
+Finalize is used to perform clean up processing just before object is garbage collected.
+it is method
+
+
+
