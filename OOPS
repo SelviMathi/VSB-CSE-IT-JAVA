@@ -362,13 +362,29 @@ public class HybridInheritanceExample {
         sc.close();
     }
 }
-Feature		Abstract Class						Interface
-Method Type	Java can have both abstract and concrete methods.	Only abstract 								methods (before Java 8). 												Can have default and static methods 										
-Variables		Can have instance variables (with access modifiers).		Only public static final 													(constants) variables can be used.
-Constructor		Can have a constructor.						Cannot have a constructor.
-Access Modifiers	Can have public, private, protected members.			All methods are public and abstract by default.
-Multiple Inheritance	Java cannot support multiple inheritance.			Supports multiple inheritance
 
 
+1. Definition:
+Abstract Class: A class that can have both implemented and abstract (unimplemented) methods.
+Interface: A blueprint that contains only abstract methods (before Java 8) or default/static methods (from Java 8).
+2. Usage:
+Abstract Class: Used when multiple related classes share common behavior.
+Interface: Used when multiple classes (even unrelated) must follow a common contract.
+3. Methods:
+Abstract Class: Can have both implemented and abstract methods.
+Interface: Before Java 8, only abstract methods; from Java 8, can have default and static methods.
+4. Variables:
+Abstract Class: Can have instance variables (normal and static).
+Interface: Only public, static, and final variables (constants).
+5. Inheritance:
+Abstract Class: Supports single inheritance (A class can extend only one abstract class).
+Interface: Supports multiple inheritance (A class can implement multiple interfaces).
+6. Constructor:
+Abstract Class: Can have constructors.
+Interface: Cannot have constructors (cannot be instantiated).
+7. Access Modifiers:
+Abstract Class: Can have any access modifier (public, private, protected, default).
+Interface: Methods are public and abstract by default.
+8. When to Use?
 Abstract Class → When classes are related and share some behavior.
 Interface → When classes are unrelated but need a common ability.
