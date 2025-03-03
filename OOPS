@@ -14,6 +14,18 @@ Classes: A blueprint or template that defines the structure and behavior of obje
 
 Objects: An instance of a class, representing a specific entity with its own set of attributes and behaviors
 
+Access Modifiers:
+
+Private: Accessible only within the class.
+Default (no modifier): Accessible within the same package.
+Protected: Accessible within the same package and subclasses.
+Public: Accessible from any other class.
+
+Static Keyword:
+
+Static Variables: Belong to the class rather than any object instance.
+Static Methods: Can be called without creating an instance of the class
+
 ***********************Class with Single object
 
 import java.util.*;
@@ -220,6 +232,14 @@ Hybrid Inheritance → Combination of multiple inheritance types. (Not directly 
 Why Java Does Not Support Multiple Inheritance?
 Java does not support multiple inheritance with classes because it causes the Diamond Problem (method ambiguity if inherited from two classes with the same method). Instead, Java supports multiple inheritance through interfaces.
 
+Polymorphism:
+Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. This means a single function can process objects differently based on their class.
+Method Overloading (Compile-time Polymorphism)
+Multiple methods in the same class with the same name but different parameters.
+ Method Overriding (Run-time Polymorphism)
+A subclass provides a specific implementation of a method already defined in its superclass
+
+
 Abstraction
 abstract class shape
 {
@@ -284,10 +304,12 @@ ob1.start();
 }
 
 Feature					Abstract Class					Interface
-Method Type		Can have both abstract and concrete methods.		Only abstract methods (before Java 8). 										Can have default and static methods 										(Java 8+).
-Variables		Can have instance variables (with access modifiers).	Can only have public static final 										(constants) variables.
-Constructor		Can have a constructor.					Cannot have a constructor.
-Access Modifiers	Can have public, private, protected members.		All methods are public and abstract by 										default.
-Multiple Inheritance	Cannot support multiple inheritance 	.		Supports multiple inheritance (a class 										can implement multiple 												interfaces).
-Usage			Used when different classes share behavior.		Used when different classes need to follow a 									common contract.
+Method Type		Java can have both abstract and concrete methods.			Only abstract methods (before Java 8). 												Can have default and static methods 										
+Variables		Can have instance variables (with access modifiers).		Only public static final 													(constants) variables can be used.
+Constructor		Can have a constructor.						Cannot have a constructor.
+Access Modifiers	Can have public, private, protected members.			All methods are public and abstract by default.
+Multiple Inheritance	Java cannot support multiple inheritance.			Supports multiple inheritance
 
+
+Abstract Class → When classes are related and share some behavior.
+Interface → When classes are unrelated but need a common ability.
