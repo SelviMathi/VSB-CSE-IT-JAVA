@@ -14,49 +14,142 @@ Classes: A blueprint or template that defines the structure and behavior of obje
 
 Objects: An instance of a class, representing a specific entity with its own set of attributes and behaviors
 
+***********************Class with Single object
+
+import java.util.*;
+class Student
+{
+    public int id;
+    public String name;
+
+}
+
+public class Main
+{	
+public static void main(String[] args) {
+	    
+	    Student s1=new Student();
+	    
+	    s1.id=1;
+	    s1.name="Roshan";
+	    System.out.println(s1.id+"->"+s1.name);
+	    
+	}
+}
+
+**********************Class with multiple objects
+
+import java.util.*;
+class Student
+{
+    public int id;
+    public String name;
+
+}
+
+public class Main
+{	
+public static void main(String[] args) {
+	    
+	    Student s1=new Student();
+	    s1.id=1;//create Scanner obj and get input
+	    s1.name="Roshan";
+	    System.out.println(s1.id+"->"+s1.name);
+	    Student s2=new Student();
+	    s2.id=2;
+	    s2.name="Rohit";
+	    System.out.println(s2.id+"->"+s2.name);
+	    
+	}
+}
+
+*******************Class with mulitple objects Using Array
+import java.util.*;
+class Student
+{
+    public int id;
+    public String name;
+
+}
+
+public class Main
+{	
+public static void main(String[] args) {
+	    
+	    Student[] s=new Student[2];
+	    s[0]=new Student();
+	    s[0].id=1;
+	    s[0].name="Roshan";
+	    System.out.println(s[0].id+"->"+s[0].name);
+	    s[1]=new Student();
+	    s[1].id=2;
+	    s[1].name="Rohit";
+	    System.out.println(s[1].id+"->"+s[1].name);
+	    
+	}
+}
+***************************Class with mulitple objects Using ArrayList
+
+import java.util.*;
+
+class Student {
+    public int id;
+    public String name;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Student> studentList = new ArrayList<>();
+
+        Student s1 = new Student();
+        s1.id = 1;
+        s1.name = "Roshan";
+        studentList.add(s1);
+
+        Student s2 = new Student();
+        s2.id = 2;
+        s2.name = "Rohit";
+        studentList.add(s2);
+
+        for (Student s : studentList) {
+            System.out.println(s.id + " -> " + s.name);
+        }
+    }
+}
 
 Constructor:
+It has the same name as the class and does not have a return type. A constructor is called automatically when an object of the class is created.
 
-Example:
-class exam
-{
-    exam()
+Types of Constructors
+Default Constructor (No-Argument Constructor)
+Parameterized Constructor
+copy constructor
+
+
+class ADD {
+    ADD() //Default constructor
     {
-        System.out.println("HI");
+    System.out.println(30);
+    }
+    ADD(int a) //Parametrise constructor
+    {
+        System.out.println(a+30);
+    }
+    ADD(ADD obj)//Copy contructor
+    {
+        System.out.println("Copy contructor called");
     }
     
 }
-
-public class Main
-{
-	public static void main(String[] args) {
-	    exam ob1=new exam();
-	}
-}
-******constructor with parametrized ***********
-class exam
-{
-    exam()
-    {
-        System.out.println("HI");
-    }
-    exam(int x)
-    {
-        System.out.println(x);
+public class Main {
+    public static void main(String[] args) {
+       
+        ADD ob=new ADD(10);
+        ADD ob1=new ADD();
+        ADD ob2=new ADD(ob1);
+        
     }
 }
-
-public class Main
-{
-	public static void main(String[] args) {
-	    exam ob=new exam(100);
-	   exam ob1=new exam();
-	    
-		
-	}
-}
-
-
 ******Encapsulation: The idea that some components of an object should be restricted from direct access******* 
 
 Example:
@@ -110,4 +203,91 @@ public class Main
 		
 	}
 }
+
+Inheritance
+Inheritance is one of the key concepts in Object-Oriented Programming (OOP). It allows a child class (subclass) to acquire the properties and behaviors (fields and methods) of a parent class (superclass). This promotes code reusability and hierarchical relationships between classes.
+
+Single Inheritance → One class inherits another.
+
+Multi-level Inheritance → A class inherits another, which inherits another.
+
+Hierarchical Inheritance → Multiple classes inherit from one base class.
+
+Hybrid Inheritance → Combination of multiple inheritance types. (Not directly supported in Java due to ambiguity issues.)
+
+
+
+Why Java Does Not Support Multiple Inheritance?
+Java does not support multiple inheritance with classes because it causes the Diamond Problem (method ambiguity if inherited from two classes with the same method). Instead, Java supports multiple inheritance through interfaces.
+
+Abstraction
+abstract class shape
+{
+double dim1,dim2;
+shape(double d1,double d2)
+{
+    dim1=d1;
+    dim2=d2;
+}
+abstract double Area();
+void display(){
+    System.out.println("Calculating....");
+}
+}
+
+class rect extends shape
+{
+rect(double h,double l)
+{
+    super(h,l);
+}
+double Area()
+{
+    return dim1*dim2;
+}
+}
+public class Abst {
+public static void main(String[] args) {
+rect ob=new rect(2,3);
+ob.display();
+System.out.println(ob.Area());
+}
+}
+
+
+interface
+
+interface vehicle
+{
+    void start();
+}
+class car implements vehicle{
+    public void start()
+    {
+System.out.println("Car started");
+    }
+}
+class bike implements vehicle{
+    public void start()
+    {
+System.out.println("Bike started");
+    }
+}
+public class inte {
+    public static void main(String[] args) {
+        
+vehicle ob=new car();
+ob.start();
+vehicle ob1=new bike();
+ob1.start();
+    }
+}
+
+Feature					Abstract Class					Interface
+Method Type		Can have both abstract and concrete methods.		Only abstract methods (before Java 8). 										Can have default and static methods 										(Java 8+).
+Variables		Can have instance variables (with access modifiers).	Can only have public static final 										(constants) variables.
+Constructor		Can have a constructor.					Cannot have a constructor.
+Access Modifiers	Can have public, private, protected members.		All methods are public and abstract by 										default.
+Multiple Inheritance	Cannot support multiple inheritance 	.		Supports multiple inheritance (a class 										can implement multiple 												interfaces).
+Usage			Used when different classes share behavior.		Used when different classes need to follow a 									common contract.
 
