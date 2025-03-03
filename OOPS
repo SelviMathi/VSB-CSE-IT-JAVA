@@ -303,8 +303,67 @@ ob1.start();
     }
 }
 
-Feature					Abstract Class					Interface
-Method Type		Java can have both abstract and concrete methods.			Only abstract methods (before Java 8). 												Can have default and static methods 										
+**********Create a class 'Parent'. 'Parent' class should have a method 'add' which prints the addition of 2 integers. Create a class 'child1' which should be a 'child' class of 'parent' class.it has a method 'sub' which prints subtraction of 2 integers. Create a class 'child2' which should be a child class of 'Parent' class. 'Child2' class should have a method 'mul' which prints multiplication of 2 integers. Create a class 'child3' which should be a child class of 'child1' class and 'child2' class. 'Child3' class should have a method 'div' which prints the division of 2 integers. Create an object for a 'Child3' class. Call the 4 methods to add, sub, mul, and div from the child1 class object and display the result.************
+
+MULITPLE INHERITANCE USING INTERFACE
+import java.util.Scanner;
+
+// Parent class
+class Parent {
+    void add(int a, int b) {
+        System.out.println(a + b);
+    }
+}
+
+// First child class extending Parent
+class Child1 extends Parent {
+    void sub(int a, int b) {
+        super.add(a, b); // Calling the add method from Parent
+        System.out.println(a - b);
+    }
+}
+
+// Second child class extending Parent
+class Child2 extends Parent {
+    void mul(int a, int b) {
+        System.out.println(a * b);
+    }
+}
+
+// Interface to simulate multiple inheritance
+interface Multiply {
+    void mul(int a, int b);
+}
+
+// Third child class extending Child1 and implementing Multiply
+class Child3 extends Child1 implements Multiply {
+    @Override
+    public void mul(int a, int b) {
+        System.out.println(a * b);
+    }
+
+    void divi(int a, int b) {
+        System.out.println(a / b);
+    }
+}
+
+// Main class
+public class HybridInheritanceExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        Child3 c = new Child3();
+        c.sub(a, b);
+        c.mul(a, b);
+        c.divi(a, b);
+
+        sc.close();
+    }
+}
+Feature		Abstract Class						Interface
+Method Type	Java can have both abstract and concrete methods.	Only abstract 								methods (before Java 8). 												Can have default and static methods 										
 Variables		Can have instance variables (with access modifiers).		Only public static final 													(constants) variables can be used.
 Constructor		Can have a constructor.						Cannot have a constructor.
 Access Modifiers	Can have public, private, protected members.			All methods are public and abstract by default.
