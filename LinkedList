@@ -1,0 +1,86 @@
+class LinkedList {
+    Node start;
+    class Node {
+        int data;
+        Node next;
+        Node(int num) {
+            data = num;
+            next = null;
+        }
+    }
+public void insertBeginning(int data) {
+    Node newNode = new Node(data);//Creating newnode
+    newNode.next = start;
+    start = newNode;
+    }
+
+public void insertEnd(int data) {
+Node newNode = new Node(data);//Creating newnode
+    if(start==null){
+    start=newNode;
+    return;
+    }
+    Node tptr=start;//traversal pointer pointing to start node
+    while(tptr.next!=null){
+    tptr=tptr.next;//increment the traversal pointer
+    }
+    tptr.next=newNode;//connecting newnode with end node
+    }
+
+public void insertAfter(int pos,int data) throws Exception {
+    Node newNode = new Node(data);//Creating newnode
+    int size = calcSize();
+    if(pos<0 || pos>size)
+    throw new Exception("Access denied for given position");
+    if(pos==1){
+    insertBeginning(data);
+    return;
+    }
+    Node tptr=start;
+    for(int i=1;i<pos-1;i++){
+    tptr=tptr.next;
+    }
+    newNode.next=tptr.next;
+    tptr.next=newNode;
+}
+public int calcSize(){
+        int size = 0;
+        Node node=start;
+        while(node!=null){
+            node = node.next;
+            size++;
+        }
+        return size;
+  }
+
+public void displayLL() {
+        Node tptr = start;
+        while (tptr != null) {
+            System.out.print(tptr.data + "->");
+            tptr = tptr.next;
+        }
+        System.out.println("NULL");
+    }
+}
+
+public class Main {
+    public static void main(String args[])throws Exception {
+        LinkedList obj = new LinkedList();
+try{
+        obj.insertBeginning(10);
+        obj.insertBeginning(20);
+        obj.insertBeginning(30);
+
+        obj.displayLL();
+        obj.insertEnd(5);
+        System.out.println();
+        obj.displayLL();
+        obj.insertAfter(30,100);
+        System.out.println();
+        obj.displayLL();
+}
+catch(Exception e) {
+    System.out.println(e.getMessage());
+} 
+    }
+}
