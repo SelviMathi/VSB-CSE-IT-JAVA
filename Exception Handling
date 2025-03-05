@@ -79,7 +79,54 @@ Sample Input	Sample Output
 Sample Input	Sample Output
 50 50		50 50 
 		Passed
- 
+
+
+*****************************************************************************************************
+
+
+import java.util.Scanner;
+
+class Vayasirukka extends Exception
+{
+
+    public Vayasirukka(String msg)
+    {
+        super(msg);
+    }
+}
+class Scoreirukka extends Exception
+{
+
+    public Scoreirukka(String msg)
+    {
+        super(msg);
+    }
+}
+public class License
+{
+    static void validah(int age,int score) throws Scoreirukka,Vayasirukka
+    {
+        if(age<18) throw new Vayasirukka("INVALID AGE");
+        if(score<40) throw new Scoreirukka("You should get at least 40 marks");
+        System.out.println("Passed.");
+    }
+    public static void main(String[] args)
+    {
+        try
+        {
+            Scanner in=new Scanner(System.in);
+            int age=in.nextInt();
+            int score=in.nextInt();
+            validah(age, score);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+******************************************************************************************************
 
 2.Get an integer input,
 If the input is 1, Throw an Integer exception.
@@ -92,3 +139,48 @@ Output Format
 The output prints the corresponding exception. Refer sample output for formatting exception.
 Sample Input	Sample Output
 1		Integer exception caught
+
+***********************************************************************************************
+
+
+import java.util.Scanner;
+
+class Type extends Exception
+{
+    Type(String msg)
+    {
+        super(msg);
+    }
+}
+public class IntCharDoub
+{
+    static void Dtype(int n) throws Type
+    {
+        switch(n)
+        {
+            case 1:
+                throw new Type("Integer Exception caught");
+            case 2:
+                throw new Type("Character Exception caught");
+            case 3:
+                throw new Type("Double Exception caught");
+            default:
+                System.out.println("No Exception caught");
+                break;
+        }
+    }
+    public static void main(String[] args)
+    {
+        try {
+            Scanner in=new Scanner(System.in);
+            int n=in.nextInt();
+            Dtype(n);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+***********************************************************************************************
