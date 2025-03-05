@@ -1,3 +1,18 @@
+LINKED LIST:
+1.Insert-beg,end,atpos
+2.Count
+3.Sum
+4.Search
+5.Max
+6.Delete
+7.Check if sorted or not
+8.Remove duplicates
+9.Reverse
+10.Merge 2 linkedlist
+
+
+*****************INSERTION & COUNT******************
+
 class LinkedList {
     Node start;
     class Node {
