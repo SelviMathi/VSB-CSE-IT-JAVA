@@ -102,5 +102,16 @@ O(nlogn) (e.g., merge sort).
 Exponential Time: 
 O(2^n ) (e.g., solving the Tower of Hanoi).
 
+**********************
+Space Complexity
 
+Space complexity generally represents the summation of auxiliary space and the input space. Auxiliary space refers to the space that we use additionally to solve a problem. And input space refers to the space that we use to store the inputs.
+
+Ex:
+int a=10;    1 (inp space)
+int b=20;    1 (inp space)
+int c=a+b;   1 (aux space)
+O(constant)
+
+If we use an array of size n, the space complexity will be O(N).
 
