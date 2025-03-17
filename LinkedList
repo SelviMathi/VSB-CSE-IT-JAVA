@@ -11,7 +11,6 @@ LINKED LIST:
 10.Merge 2 linkedlist
 
 
-*****************INSERTION & COUNT******************
 
 class LinkedList {
     Node start;
@@ -67,6 +66,42 @@ public int calcSize(){
         }
         return size;
   }
+    public void deleteBeginning() {
+        if(start==null){
+            System.out.println("List is empty");
+            return;
+        }
+        start=start.next;
+    }
+    public void deleteEnd() {
+        if(start==null){
+            System.out.println("List is empty");
+            return;
+        }
+        if(start.next==null){
+            start=null;
+            return;
+        }
+        Node tptr=start;
+        while(tptr.next.next!=null){
+            tptr=tptr.next;
+        }
+        tptr.next=null;
+    }
+    public void deleteAfter(int pos) throws Exception {
+        int size = calcSize();
+        if(pos<0 || pos>size)
+            throw new Exception("Access denied for given position");
+        if(pos==1){
+            deleteBeginning();
+            return;
+        }
+        Node tptr=start;
+        for(int i=1;i<pos-1;i++){
+            tptr=tptr.next;
+        }
+        tptr.next=tptr.next.next;
+    }
 
 public void displayLL() {
         Node tptr = start;
@@ -74,7 +109,7 @@ public void displayLL() {
             System.out.print(tptr.data + "->");
             tptr = tptr.next;
         }
-        System.out.println("NULL");
+        System.out.println("NULL\n");
     }
 }
 
@@ -88,10 +123,13 @@ try{
 
         obj.displayLL();
         obj.insertEnd(5);
-        System.out.println();
         obj.displayLL();
-        obj.insertAfter(30,100);
-        System.out.println();
+        obj.insertAfter(3,100);
+        obj.displayLL();
+        System.out.println("Deletion operation.....");
+        obj.deleteBeginning();
+        obj.deleteEnd();
+        obj.deleteAfter(2);
         obj.displayLL();
 }
 catch(Exception e) {
@@ -99,3 +137,6 @@ catch(Exception e) {
 } 
     }
 }
+
+
+
