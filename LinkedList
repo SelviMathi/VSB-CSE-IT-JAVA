@@ -66,6 +66,52 @@ public int calcSize(){
         }
         return size;
   }
+public void removeduplicates(){
+        Node tpr = start;
+        while(tpr != null && tpr.next != null){
+            if(tpr.data == tpr.next.data)
+                tpr.next=tpr.next.next;
+            else
+                tpr = tpr.next;
+        
+            }
+        }
+public int MaxofNodes(){
+        Node tptr = start;
+        int max = 0;
+        while(tptr != null){
+            if(tptr.data > max){
+                max = tptr.data;
+            }
+            tptr = tptr.next;
+        }
+        return max;
+    }
+public boolean search(int key){
+        Node tptr = start;
+        while(tptr != null){
+            if(tptr.data == key){
+                return true;
+            }
+            tptr = tptr.next;
+        }
+        return false;
+    }
+public boolean isSorted() {
+    if (start == null || start.next == null) {
+        return true;
+    }
+
+    Node temp = start;
+    while (temp.next != null) { 
+        if (temp.data > temp.next.data) {
+            return false;
+        }
+        temp = temp.next;
+    }
+    return true;
+}
+
     public void deleteBeginning() {
         if(start==null){
             System.out.println("List is empty");
