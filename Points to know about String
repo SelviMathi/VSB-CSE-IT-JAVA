@@ -1,0 +1,139 @@
+The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class.
+Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example:
+
+     String str = "abc";
+ 
+is equivalent to:
+
+     char data[] = {'a', 'b', 'c'};
+     String str = new String(data);
+
+METHODS
+
+import java.util.Scanner;
+public class methods {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = "selvi";
+        String name1=sc.next();//selvi
+System.out.println(name.length());
+
+System.out.println(name.hashcode());
+System.out.println(name1.hashcode());
+
+// System.out.println(name.toUpperCase());
+    // System.out.println(name.toLowerCase());
+//System.out.println(name.indexOf('e'));
+//System.out.println(name.charAt(3));
+
+    // System.out.println(name.substring(  2,4));
+    // System.out.println(name.substring(2));
+    
+    // System.out.println(name.substring(0,3) 
+   
+   // System.out.println(name.isEmpty());
+    System.out.println(name.endsWith("i"));
+    } 
+}
+
+
+Vowel count**************************
+import java.util.Scanner;
+public class S{
+public static void main(String args[]){
+    Scanner ob=new Scanner(System.in);
+    String n=ob.next();
+    int vowel=0;
+    for(int i=0;i<n.length();i++){
+        if(n.charAt(i)=='a'||n.charAt(i)=='A'||
+        n.charAt(i)=='e'||n.charAt(i)=='E'||
+        n.charAt(i)=='i'||n.charAt(i)=='I'||
+        n.charAt(i)=='o'||n.charAt(i)=='O'||
+        n.charAt(i)=='u'||n.charAt(i)=='U')
+        vowel++;
+}
+    System.out.println(vowel);
+}
+}
+
+
+Count the words that ended with given string******************
+
+import java.util.Scanner;
+public class countendwithchar {
+    public static void main(String[] args) {
+        Scanner ob=new Scanner(System.in);
+        int size=ob.nextInt();
+        ob.nextLine();
+        String name[]=new String[size];
+        for(int i=0;i<size;i++){
+            name[i]=ob.nextLine();
+        }
+        String s=ob.nextLine();
+        int count=0;
+        for(String n:name){
+            if(n.endsWith(s)) 
+                count++;
+        }  
+        System.out.println(count);
+    
+    }
+}
+
+Count the sentence in paragraph******************
+import java.util.Scanner;
+
+public class sentencecount {
+    public static void main(String[] args) {
+        Scanner ob= new Scanner(System.in);
+        String n=ob.nextLine();
+        int count=0;
+    for(int i=0;i<n.length();i++){
+        if(n.charAt(i)=='.'||n.charAt(i)=='!'
+            ||n.charAt(i)=='?')
+                count++;
+        }
+        System.out.println(count);
+    }
+    
+}
+Word count***************************
+import java.util.Scanner;
+public class wordcount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name=sc.nextLine();
+        int count = 0;
+        for(int i=0;i<name.length();i++){
+            if(name.charAt(i)==' ')
+                count++;
+            }
+            System.out.println(count+1);
+        }
+    }
+
+
+
+Method                             	Description	                               Example
+isLetter(char ch)	      Checks if the character is a letter (A-Z or a-z)	     Character.isLetter('A') → true
+isDigit(char ch)      	Checks if the character is a digit (0–9)	             Character.isDigit('5') → true
+isUpperCase(char ch)  	Checks if the character is an uppercase letter	       Character.isUpperCase('H') → true
+isLowerCase(char ch)	  Checks if the character is a lowercase letter	         Character.isLowerCase('h') → true
+toUpperCase(char ch)	  Converts a character to uppercase	                     Character.toUpperCase('d') → 'D'
+toLowerCase(char ch)	  Converts a character to lowercase                     	Character.toLowerCase('E') → 'e'
+isWhitespace(char ch)	  Checks if the character is a space, tab, newline, etc.	Character.isWhitespace(' ') → true
+isLetterOrDigit(char ch)  Checks if it's a letter or a digit                    	Character.isLetterOrDigit('9') → true
+
+
+
+Method	                                Description	                          Example
+length()	                        Length of string	"hello".length() → 5
+charAt(index)                    	Character at index	"Java".charAt(2) → 'v'
+substring(start, end)            	Extract substring	"hello".substring(1,4) → "ell"
+equals() / equalsIgnoreCase()    	Compare strings	"Java".equals("java") → false
+contains(str)                    	Check if contains substring	"Java".contains("va") → true
+toUpperCase() / toLowerCase()	    Change case	"java".toUpperCase() → "JAVA"
+trim()	                          Remove leading/trailing spaces	" hi ".trim() → "hi"
+replace(a, b)	                    Replace characters	"apple".replace('p','b') → "abble"
+split(" ")	                      Split by delimiter	"A B C".split(" ") → [A, B, C]
+indexOf('a') / lastIndexOf('a')  	Find positions	"banana".indexOf('a') → 1
