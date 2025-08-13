@@ -1,0 +1,237 @@
+A Tree is a non-linear, hierarchical data structure.
+
+A Binary Tree is a tree where each node has at most two children: left and right.
+
+A Binary Search Tree (BST) is a binary tree where:
+
+Left subtree nodes < current node
+
+Right subtree nodes > current node
+
+
+Basic Terminology
+
+| Term        | Description                                 |
+| ----------- | ------------------------------------------- |
+| **Node**    | Each element of a tree                      |
+| **Root**    | The topmost node                            |
+| **Leaf**    | A node with no children                     |
+| **Parent**  | Node with child nodes                       |
+| **Child**   | Node descending from a parent               |
+| **Subtree** | Tree formed from a node and its descendants |
+| **Height**  | Max edges from a node to a leaf             |
+| **Depth**   | Edges from root to that node                |
+| **Level**   | Depth + 1                                   |
+| **Degree**  | Number of children of a node                |
+
+Tree Traversals
+| Type            | Order                     |
+| --------------- | ------------------------- |
+| **Preorder**    | Root → Left → Right       |
+| **Inorder**     | Left → Root → Right       |
+| **Postorder**   | Left → Right → Root       |
+| **Level Order** | Breadth-first using Queue |
+
+
+Tree Types
+
+| Tree Type                    | Description                                         |
+| ---------------------------- | --------------------------------------------------- |
+| **Binary Tree**              | At most 2 children per node                         |
+| **BST (Binary Search Tree)** | Ordered binary tree                                 |
+| **Balanced Tree**            | Height difference between left and right is minimal |
+| **Full Binary Tree**         | Every node has 0 or 2 children                      |
+| **Perfect Binary Tree**      | Full and all leaves at same level                   |
+| **Complete Binary Tree**     | All levels filled except possibly the last          |
+| **AVL Tree**                 | Self-balancing BST                                  |
+| **Red-Black Tree**           | Balanced BST with coloring rules                    |
+
+
+Important Properties
+
+Number of nodes (n) in a perfect binary tree of height h:
+n = 2^(h+1) - 1
+
+Height of tree with n nodes (minimum):
+log₂(n) (for balanced trees)
+
+Height of tree with n nodes (maximum):
+n - 1 (for skewed trees)
+
+Max nodes at level l:
+2^l (0-based level)
+
+Max leaf nodes in a binary tree of height h:
+2^h (if full/perfect)
+
+***********************************************************************
+
+Binary Tree Implementation
+
+class BT{
+    class Node{
+        int data;
+        Node left,right;
+        Node(int d){
+            data=d;
+            left=null;
+            right=null;
+        }
+    }
+    Node root=null;
+    BT(int va){
+        root=new Node(va);
+    }
+    public void insertleftchild(Node n,int val){
+        Node newNode=new Node(val);
+        n.left=newNode;
+        }
+    public void insertrightchild(Node n,int val){
+        Node newNode=new Node(val);
+        n.right=newNode;
+        }
+    public void preOrder(Node n){
+        if(n!=null){
+        System.out.print(n.data+" ");
+        preOrder(n.left);
+        preOrder(n.right);
+            
+        }
+        
+    }
+     public void InOrder(Node n){
+        if(n!=null){
+            InOrder(n.left);
+        System.out.print(n.data+" ");
+        
+        InOrder(n.right);
+            
+        }
+        
+    }
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+		BT tree=new BT(10);
+		tree.insertleftchild(tree.root,3);
+		tree.insertrightchild(tree.root,5);
+		tree.insertleftchild(tree.root.left,2);
+		tree.insertrightchild(tree.root.left,8);
+		tree.insertrightchild(tree.root.right,15);
+	System.out.println("PreOrder");
+	tree.preOrder(tree.root);
+	System.out.println("\nInOrder");
+	tree.InOrder(tree.root);
+	}
+}
+
+
+Char Tree implementation
+*******************************
+		A
+	B		C
+     D	  E	     F 	  G
+	 H		    I
+class BT{
+    class Node{
+        char data;
+        Node left,right;
+        Node(char d){
+            data=d;
+            left=null;
+            right=null;
+        }
+    }
+    Node root=null;
+    BT(char va){
+        root=new Node(va);
+    }
+    public void insertleftchild(Node n,char val){
+        Node newNode=new Node(val);
+        n.left=newNode;
+        }
+    public void insertrightchild(Node n,char val){
+        Node newNode=new Node(val);
+        n.right=newNode;
+        }
+    public void preOrder(Node n){
+        if(n!=null){
+        System.out.print(n.data+" ");
+        preOrder(n.left);
+        preOrder(n.right);
+            
+        }
+        
+    }
+
+public int count(Node n){
+            if(n==null) return 0;
+            int l=count(n.left);
+            int r=count(n.right);
+            return l+r+1;
+        }
+
+public int countofleaf(Node n){
+            if(n==null) return 0;
+            if(n.left==null && n.right==null) return 1;
+            int l=countofleaf(n.left);
+            int r=countofleaf(n.right);
+            return l+r;
+        }
+    public int height(Node n){
+            if(n==null) return 0;
+            int l=height(n.left);
+            int r=height(n.right);
+            return Math.max(l,r)+1;
+        }
+    
+    public boolean search(Node n,char val){
+        if(n==null) return false;
+        if(n.data==val) return true;
+        boolean l=search(n.left,val);
+        boolean r=search(n.right,val);
+        return l||r;
+    }
+
+ public boolean isBalanced(Node n){
+        if(n==null) return true;
+        int l=height(n.left);
+        int r=height(n.right);
+        if(Math.abs(l-r)<=1) return true;
+        else  return false;
+   }
+
+    public void levelOrder() {
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            Node n = q.poll();
+            System.out.print(n.data + " ");
+            if (n.left != null) q.add(n.left);
+            if (n.right != null) q.add(n.right);
+        }
+        System.out.println();
+    }
+
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+		BT tree=new BT('A');
+		tree.insertleftchild(tree.root,'B');
+		tree.insertrightchild(tree.root,'C');
+		tree.insertleftchild(tree.root.left,'D');
+		tree.insertrightchild(tree.root.left,'E');
+		tree.insertleftchild(tree.root.left.right,'H');
+		tree.insertleftchild(tree.root.right,'F');
+		tree.insertrightchild(tree.root.right,'G');
+		tree.insertrightchild(tree.root.right.right,'I');
+	System.out.println("PreOrder");
+	tree.preOrder(tree.root);
+	System.out.println("\nInOrder");
+	tree.InOrder(tree.root);
+	}
+}
